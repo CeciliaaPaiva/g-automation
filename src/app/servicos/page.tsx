@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/content/services";
+import { ServiceIcon } from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
   title: "Serviços",
@@ -26,12 +27,17 @@ export default function ServicosPage() {
         {services.map((service) => (
           <div
             key={service.slug}
-            className="rounded-xl border border-slate-200 p-6 sm:p-8"
+            className="flex gap-5 rounded-xl border border-slate-200 p-6 sm:p-8"
           >
-            <h2 className="text-xl font-semibold text-slate-900">
-              {service.title}
-            </h2>
-            <p className="mt-3 text-slate-600">{service.description}</p>
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+              <ServiceIcon slug={service.slug} className="h-6 w-6" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-slate-900">
+                {service.title}
+              </h2>
+              <p className="mt-3 text-slate-600">{service.description}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -48,6 +48,25 @@ export default function SobrePage() {
           </p>
         </div>
       </div>
+
+      <div className="mt-12 grid gap-6 rounded-xl bg-slate-50 p-8 sm:grid-cols-3">
+        <div className="text-center">
+          <p className="text-3xl font-bold text-brand-700">2022</p>
+          <p className="mt-1 text-sm text-slate-600">Ano de fundação</p>
+        </div>
+        <div className="text-center">
+          <p className="text-3xl font-bold text-brand-700">NE</p>
+          <p className="mt-1 text-sm text-slate-600">
+            Atendimento em todo o Nordeste
+          </p>
+        </div>
+        <div className="text-center">
+          <p className="text-3xl font-bold text-brand-700">ME</p>
+          <p className="mt-1 text-sm text-slate-600">
+            Empresa ativa — CNPJ {siteConfig.cnpj}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

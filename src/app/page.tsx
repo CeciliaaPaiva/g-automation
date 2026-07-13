@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "@/content/site";
 import { services } from "@/content/services";
 import { clientSegments } from "@/content/clients";
+import { ServiceIcon } from "@/components/ServiceIcon";
 
 export default function Home() {
   return (
@@ -37,7 +38,10 @@ export default function Home() {
               key={service.slug}
               className="rounded-xl border border-slate-200 p-6 shadow-sm"
             >
-              <h3 className="font-semibold text-slate-900">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+                <ServiceIcon slug={service.slug} className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold text-slate-900">
                 {service.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{service.summary}</p>
