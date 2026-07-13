@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/content/services";
 import { ServiceIcon } from "@/components/ServiceIcon";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Serviços",
-  description:
-    "Manutenção de inversores, soft-starters, placas eletrônicas industriais, retrofit de painéis e automação industrial.",
-};
+export const metadata = pageMetadata(
+  "Serviços",
+  "Manutenção de inversores, soft-starters, placas eletrônicas industriais, retrofit de painéis e automação industrial."
+);
 
 export default function ServicosPage() {
   return (

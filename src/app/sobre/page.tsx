@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { siteConfig } from "@/content/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Sobre",
-  description: siteConfig.description,
-};
+export const metadata = pageMetadata("Sobre", siteConfig.description);
 
 export default function SobrePage() {
   return (

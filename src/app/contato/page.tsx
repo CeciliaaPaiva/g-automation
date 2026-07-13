@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
 import { siteConfig, whatsappLink } from "@/content/site";
 import { ContactForm } from "@/components/ContactForm";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Contato",
-  description:
-    "Entre em contato com a G Automation por WhatsApp, e-mail ou formulário para solicitar um orçamento.",
-};
+export const metadata = pageMetadata(
+  "Contato",
+  "Entre em contato com a G Automation por WhatsApp, e-mail ou formulário para solicitar um orçamento."
+);
 
 export default function ContatoPage() {
   return (

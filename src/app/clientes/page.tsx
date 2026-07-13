@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { clientSegments, clients } from "@/content/clients";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Clientes",
-  description:
-    "Conheça os segmentos de indústria que a G Automation já atendeu em todo o Nordeste.",
-};
+export const metadata = pageMetadata(
+  "Clientes",
+  "Conheça os segmentos de indústria que a G Automation já atendeu em todo o Nordeste."
+);
 
 export default function ClientesPage() {
   const authorizedClients = clients.filter((c) => c.logoAuthorized);

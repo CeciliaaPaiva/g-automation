@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsappButton } from "@/components/WhatsappButton";
-import { siteConfig } from "@/content/site";
+import { siteConfig, siteUrl } from "@/content/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,16 +17,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "automação industrial",
+    "manutenção de inversores",
+    "soft-starter",
+    "retrofit de painéis elétricos",
+    "eletrônica industrial Nordeste",
+    "G Automation",
+  ],
   openGraph: {
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
     locale: "pt_BR",
     type: "website",
+    url: siteUrl,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary",
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
   },
 };
 

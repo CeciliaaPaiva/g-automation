@@ -21,5 +21,12 @@ export const siteConfig = {
   },
 } as const;
 
+/**
+ * URL de produção do site. Definir NEXT_PUBLIC_SITE_URL no ambiente de
+ * deploy (Vercel) assim que o domínio definitivo for escolhido.
+ */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://gautomation.vercel.app";
+
 export const whatsappLink = (message: string) =>
   `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;

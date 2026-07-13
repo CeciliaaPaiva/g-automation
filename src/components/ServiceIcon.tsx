@@ -85,5 +85,9 @@ export function ServiceIcon({
 }) {
   const Icon = icons[slug];
   if (!Icon) return null;
-  return <Icon className={className} />;
+  return (
+    <span aria-hidden="true">
+      <Icon className={className} />
+    </span>
+  );
 }
