@@ -1,7 +1,8 @@
 /**
- * Logos reais só devem ser publicados após autorização explícita de cada cliente
- * (ver REQUIREMENTS.md, seção "Restrições e Riscos"). Até lá, `logoAuthorized: false`
- * e a UI deve exibir apenas o segmento, sem nome/marca do cliente.
+ * Autorização confirmada pelo cliente (Ana Flavia/Gerson) para uso de nome
+ * na esteira de clientes. Quando o arquivo de logo (PNG/SVG) de cada empresa
+ * for enviado, adicione o caminho em `logoSrc` (ex: "/clients/fersystem.png")
+ * para trocar o wordmark de texto pela imagem real.
  */
 export type Client = {
   name: string;
@@ -11,13 +12,13 @@ export type Client = {
 };
 
 export const clients: Client[] = [
-  { name: "Fersystem", segment: "Indústria", logoAuthorized: false },
-  { name: "Ceará Mirim Agronegócio", segment: "Agronegócio", logoAuthorized: false },
-  { name: "Sanovo Greenpack", segment: "Embalagens", logoAuthorized: false },
-  { name: "D'Pádua", segment: "Indústria", logoAuthorized: false },
-  { name: "São José", segment: "Agroindústria", logoAuthorized: false },
-  { name: "Marmoraria Brandão", segment: "Marmoraria", logoAuthorized: false },
-  { name: "Pindorama", segment: "Agroindústria", logoAuthorized: false },
+  { name: "Fersystem", segment: "Indústria", logoAuthorized: true },
+  { name: "Ceará Mirim Agronegócio", segment: "Agronegócio", logoAuthorized: true },
+  { name: "Sanovo Greenpack", segment: "Embalagens", logoAuthorized: true },
+  { name: "D'Pádua", segment: "Indústria", logoAuthorized: true },
+  { name: "São José", segment: "Agroindústria", logoAuthorized: true },
+  { name: "Marmoraria Brandão", segment: "Marmoraria", logoAuthorized: true },
+  { name: "Pindorama", segment: "Agroindústria", logoAuthorized: true },
 ];
 
 export const clientSegments = Array.from(

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { siteConfig } from "@/content/site";
 import { services } from "@/content/services";
-import { clientSegments } from "@/content/clients";
 import { ServiceIcon } from "@/components/ServiceIcon";
+import { ClientMarquee } from "@/components/ClientMarquee";
 
 export default function Home() {
   return (
@@ -36,9 +36,9 @@ export default function Home() {
           {services.map((service) => (
             <div
               key={service.slug}
-              className="rounded-xl border border-slate-200 p-6 shadow-sm"
+              className="group rounded-xl border border-slate-200 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-700 transition duration-300 group-hover:bg-brand-700 group-hover:text-white">
                 <ServiceIcon slug={service.slug} className="h-5 w-5" />
               </div>
               <h3 className="mt-4 font-semibold text-slate-900">
@@ -56,25 +56,20 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-slate-900">
             Indústrias que já atendemos
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-600">
-            Atuamos com indústrias de diversos segmentos em todo o Nordeste,
-            incluindo:
+            Empresas de diversos segmentos em todo o Nordeste confiam na
+            G Automation.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {clientSegments.map((segment) => (
-              <span
-                key={segment}
-                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm ring-1 ring-slate-200"
-              >
-                {segment}
-              </span>
-            ))}
-          </div>
+        </div>
+        <div className="mt-8">
+          <ClientMarquee />
+        </div>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Link
             href="/clientes"
             className="mt-8 inline-block text-sm font-semibold text-brand-700 hover:underline"

@@ -26,9 +26,9 @@ export default function ServicosPage() {
         {services.map((service) => (
           <div
             key={service.slug}
-            className="flex gap-5 rounded-xl border border-slate-200 p-6 sm:p-8"
+            className="group flex gap-5 rounded-xl border border-slate-200 p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg sm:p-8"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700 transition duration-300 group-hover:bg-brand-700 group-hover:text-white">
               <ServiceIcon slug={service.slug} className="h-6 w-6" />
             </div>
             <div>
