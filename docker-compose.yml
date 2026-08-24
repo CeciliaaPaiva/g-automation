@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: ["127.0.0.1:8102:3000"]
+    env_file: .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NEXT_PUBLIC_SITE_URL=http://gautomation.claudinha.local
+    networks: [default]
+
+networks:
+  default: { name: dev-shared, external: true }

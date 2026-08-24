@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  allowedDevOrigins: ["gautomation.ceciliap.com", "gautomation.claudinha.local"],
 };
 
 export default nextConfig;
